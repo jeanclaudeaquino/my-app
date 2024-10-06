@@ -4,7 +4,7 @@ const HomeScreen = () => {
     <div style={styles.container}>
       <h1 style={styles.title}>JC's Demo app for authorized deployment (Chnaged to approved)</h1>
       <p style={styles.description}>
-      Will deploy since will approved
+       On my machine
       </p>
       <button style={styles.button} onClick={() => alert('Button clicked!')}>
         Get Started
