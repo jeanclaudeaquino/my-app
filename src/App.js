@@ -2,7 +2,7 @@
 const HomeScreen = () => {
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>JC's Demo app for authorized deployment (Chnaged to approved)</h1>
+      <h1 style={styles.title}>JC's Demo app for authodfdfdfdfrized deployment (Chnaged to approved)</h1>
       <p style={styles.description}>
        On my machine
       </p>
