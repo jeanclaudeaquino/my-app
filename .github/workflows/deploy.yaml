@@ -29,19 +29,21 @@ jobs:
           node ./scripts/send_sms.js 
 
       - name: Wait for SMS Approval
-        timeout-minutes: 15  
+        timeout-minutes: 15
         run: |
           approved=false
           while [ "$approved" = false ]; do
-            node ./scripts/check_sms_approval.js
-            if [ $? -eq 0 ]; then
-              approved=true
-            else
-              echo "Waiting for approval..."
-              sleep 60  # Wait for 1 minute before checking again
-            fi
+           set +e  # Disable immediate exit on non-zero status
+           node ./scripts/check_sms_approval.js
+           if [ $? -eq 0 ]; then
+             approved=true
+           else
+             echo "Waiting for approval..."
+             sleep 60  # Wait for 1 minute before checking again
+           fi
+           set -e  # Re-enable immediate exit after node command
           done
-
+ 
       - name: Deploy the Application via Render Deploy Hook
         if: success() 
         run: |

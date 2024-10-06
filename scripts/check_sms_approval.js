@@ -12,7 +12,7 @@ async function checkApproval() {
       console.log('Deployment approved.');
       process.exit(0);  // Return status 0 (success) to GitHub Actions
     } else {
-      console.log('Waiting for approval...');
+      console.log('Waiting for approval script...');
       process.exit(1);  // Return status 1 (failure) to GitHub Actions to indicate approval not yet received
     }
   } catch (error) {
