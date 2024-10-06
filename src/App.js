@@ -2,9 +2,9 @@
 const HomeScreen = () => {
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>Welcome to My Website</h1>
+      <h1 style={styles.title}>JC's Demo app for authorized deployment</h1>
       <p style={styles.description}>
-        This is a simple home screen created with React.
+        sub description
       </p>
       <button style={styles.button} onClick={() => alert('Button clicked!')}>
         Get Started
