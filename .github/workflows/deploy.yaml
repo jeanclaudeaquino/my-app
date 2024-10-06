@@ -54,7 +54,7 @@ jobs:
       - name: Deploy the Application via Render Deploy Hook
         if: success() 
         run: |
-          curl -X POST https://api.render.com/deploy/srv-cs0q72u8ii6s73cspid0?key=XLad0wXD0XM
+          curl -X POST https://api.render.com/deploy/srv-cs15r3a3esus739b0o6g?key=740nWTVEATQ
 
       - name: Clean Workspace
         run: |

@@ -3,7 +3,7 @@ const axios = require('axios');
 async function sendSMS() {
   try {
     // Make a POST request to the endpoint without a payload
-    const response = await axios.post('https://authorized-deployment.onrender.com/send-sms');
+    const response = await axios.post('https://authorized-deployment-7iek.onrender.com/send-sms');
 
     // Assuming the server responds with a success message
     console.log('SMS request sent successfully:', response.data);

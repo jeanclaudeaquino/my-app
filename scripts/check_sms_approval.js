@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-axios.get('https://authorized-deployment.onrender.com/check-approval')
+axios.get('https://authorized-deployment-7iek.onrender.com/check-approval')
   .then(response => {
     const status = response.data.status;  // Assuming the API response has a "status" field for approval
 
