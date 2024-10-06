@@ -1,17 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+const HomeScreen = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Try not to auto deploy the app
-        </p>
-      </header>
+    <div style={styles.container}>
+      <h1 style={styles.title}>Welcome to My Website</h1>
+      <p style={styles.description}>
+        This is a simple home screen created with React.
+      </p>
+      <button style={styles.button} onClick={() => alert('Button clicked!')}>
+        Get Started
+      </button>
     </div>
   );
-}
+};
 
-export default App;
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100vh',
+    backgroundColor: '#f0f0f0',
+    textAlign: 'center',
+  },
+  title: {
+    fontSize: '2.5rem',
+    color: '#333',
+  },
+  description: {
+    fontSize: '1.2rem',
+    color: '#666',
+    margin: '20px 0',
+  },
+  button: {
+    padding: '10px 20px',
+    fontSize: '1rem',
+    color: '#fff',
+    backgroundColor: '#007bff',
+    border: 'none',
+    borderRadius: '5px',
+    cursor: 'pointer',
+  },
+};
+
+export default HomeScreen;
