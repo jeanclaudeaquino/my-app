@@ -1,6 +1,6 @@
 const axios = require('axios');
 
-axios.get('http://localhost:3000/check-approval')
+axios.get('https://authorized-deployment.onrender.com/check-approval')
   .then(response => {
     if (response.data.approved === true) {
       console.log("Both SMS approvals received.");
