@@ -1,0 +1,57 @@
+
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Build the Project
+        run: npm run build
+
+      - name: Send SMS for Approval
+        run: |
+          node ./scripts/send_sms.js 
+
+      - name: Wait for SMS Approval
+        timeout-minutes: 15  
+        run: |
+          approved=false
+          while [ "$approved" = false ]; do
+            node ./scripts/check_sms_approval.js
+            if [ $? -eq 0 ]; then
+              approved=true
+            else
+              echo "Waiting for approval..."
+              sleep 60  # Wait for 1 minute before checking again
+            fi
+          done
+
+      - name: Deploy the Application via Render Deploy Hook
+        if: success() 
+        run: |
+          curl -X POST https://api.render.com/deploy/srv-cs0q72u8ii6s73cspid0?key=XLad0wXD0XM
+
+      - name: Clean Workspace
+        run: |
+          echo "Cleaning up the workspace..."
+          rm -rf *
