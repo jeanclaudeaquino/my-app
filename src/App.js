@@ -2,9 +2,9 @@
 const HomeScreen = () => {
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>JC's Demo app for authorized deployment</h1>
+      <h1 style={styles.title}>JC's Demo app for authorized deployment (Chnaged to approved)</h1>
       <p style={styles.description}>
-       Will not deploy because declined, send no
+      Will deploy since will approved
       </p>
       <button style={styles.button} onClick={() => alert('Button clicked!')}>
         Get Started
