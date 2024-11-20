@@ -2,7 +2,7 @@
 const HomeScreen = () => {
   return (
     <div style={styles.container}>
-      <h1 style={styles.title}>JC's Demo app for app deployment (TESING 20/11/2024)</h1>
+      <h1 style={styles.title}>JC's Demo app for app deployment (TESTING 20/11/2024)</h1>
       <p style={styles.description}>
        On my machine
       </p>
